@@ -6,12 +6,22 @@
   font-family: 'Poppins', sans-serif
 }
 
-body{
+body {
+  position: relative;
+  background: transparent;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -10px;
+  z-index: -1;
+
   background-image: url(../images/bg-main.png);
-  background-position: center;
   background-repeat: repeat-y;
   background-size: 100% auto;
-  backdrop-filter: blur(3px);
+
+  filter: blur(var(--blur-fondo));
 }
 
 section
@@ -81,8 +91,10 @@ section
 
 .hero-icon{
   width: 80%;
-  margin: auto;
+  height: 100%;
+  object-fit: contain;
   display: block;
+  margin: auto;
 }
 
 @keyframes animate {
