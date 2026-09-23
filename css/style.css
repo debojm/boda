@@ -3,7 +3,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+  color: #444;
 }
 
 html,
@@ -47,6 +49,7 @@ section
 }
 
 .sec{
+  text-align: center;
   padding: 20px;
   margin: 0 auto;
   background-color: white;
@@ -179,7 +182,8 @@ section
     margin-top:1em;
     text-align:center;
     font-style:italic;
-    font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-family: "Permanent Marker", cursive;
+    color: #586957
 }
 
 .rotate-left {
@@ -208,6 +212,17 @@ section
   left: -10px;
 }
 
+.calendar-container{
+  margin-top: 200px;
+  width: 100%;
+  position: relative;
+}
+
+.calendar{
+  width: 100%;
+}
+
+
 @media (max-width: 530px) {
 .polaroid-container{
   margin: auto;
@@ -221,5 +236,48 @@ section
 
   .polaroid-container:nth-child(odd){
     left: -35%;
+  }
+}
+
+
+.corazon {
+  position: absolute;
+  width: 110px;
+  transform: rotate(5deg);
+  overflow: visible;
+  pointer-events: none;
+  top: 177px;
+  left: 181px;
+}
+
+.corazon path {
+  fill: none;
+  stroke: #ab7a7a;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  /* efecto de trazo dibujado */
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+
+  animation: dibujar-corazon 4s ease-in-out infinite;
+}
+
+@keyframes dibujar-corazon {
+  0% {
+      stroke-dashoffset: 600;
+  }
+
+  45% {
+      stroke-dashoffset: 0;
+  }
+
+  65% {
+      stroke-dashoffset: 0;
+  }
+
+  100% {
+      stroke-dashoffset: 600;
   }
 }
