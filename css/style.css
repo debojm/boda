@@ -6,6 +6,13 @@
   font-family: 'Poppins', sans-serif
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   --blur-fondo: 3px;
 
@@ -16,10 +23,10 @@ body {
 body::before {
   content: "";
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 
   z-index: -1;
 
@@ -101,6 +108,49 @@ section
   object-fit: contain;
   display: block;
   margin: auto;
+}
+
+.polaroid {
+  background-color:white;
+  padding:10px 10px 50px 10px;
+  border:1px solid #BFBFBF;
+  box-shadow:10px 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.polaroid-container {
+  width:250px;
+  padding:10px 10px 10px 10px;
+  border:1px solid #BFBFBF;
+  background-color:white;
+  box-shadow:10px 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.polaroid-container > img {
+  width: 100%;
+}
+
+.polaroid-text {
+    display:block;
+    margin-top:1em;
+    text-align:center;
+    font-style:italic;
+    font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.rotate-left {
+  right: 0px;
+  transform:rotate(10deg);
+  -ms-transform:rotate(10deg); /* IE9 */
+  -webkit-transform:rotate(10deg); /* Safari y Chrome */
+  -moz-transform:rotate(10deg); 
+}
+ 
+.rotate-right {
+  left: 0px;
+  transform:rotate(-10deg);
+  -ms-transform:rotate(-10deg); /* IE9 */
+  -webkit-transform:rotate(-10deg); /* Safari y Chrome */
+  -moz-transform:rotate(-10deg); 
 }
 
 @keyframes animate {
