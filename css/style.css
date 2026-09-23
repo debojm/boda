@@ -44,19 +44,19 @@ section
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100vh;
 }
 
 .sec{
-    padding: 50px;
-    margin: 0 auto;
-    background-color: white;
-    position: relative;
-    width: 75%;
-    z-index: 1001;
-    background-image: url(../images/paper-bg.jpg);
-    background-size: auto;
-    border: 10px #c4c7a8 solid;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: white;
+  position: relative;
+  width: 85%;
+  max-width: 450px;
+  z-index: 1001;
+  background-image: url(../images/paper-bg.jpg);
+  background-size: auto;
+  border: 10px #c4c7a8 solid;
 }
 
 .sec > h2 {
@@ -104,10 +104,25 @@ section
 
 .hero-icon{
   width: 80%;
+  max-width: 450px;
   height: 100%;
   object-fit: contain;
   display: block;
   margin: auto;
+} 
+
+/* .hero-icon{
+  width: 80%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+} */
+
+
+.photo-gallery{
+  display: flex;
+  flex-direction: column;
 }
 
 .polaroid {
@@ -117,15 +132,45 @@ section
   box-shadow:10px 10px 30px rgba(0, 0, 0, 0.8);
 }
 
-.polaroid-container {
-  width:250px;
-  padding:10px 10px 10px 10px;
-  border:1px solid #BFBFBF;
-  background-color:white;
-  box-shadow:10px 10px 30px rgba(0, 0, 0, 0.8);
+.polaroid-container:not(:has(> span.polaroid-text)){
+  padding-bottom: 80px;
 }
 
-.polaroid-container > img {
+.polaroid-container {
+  width: 350px;
+  max-width: 350px;
+  padding: 10px;
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  margin-bottom: -45px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  max-height: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+.polaroid-container:nth-child(even){
+  left: -80px;
+}
+
+.polaroid-container:nth-child(odd){
+  left: 30px;
+}
+
+.tape{
+  position: absolute;
+  top: -50px;
+  opacity: 0.75;
+  width: 220px;
+  margin: auto;
+  display: block;
+}
+
+.polaroid-container > img:not(.tape) {
   width: 100%;
 }
 
@@ -153,13 +198,28 @@ section
   -moz-transform:rotate(-10deg); 
 }
 
-@keyframes animate {
-  0%, 100%
-  {
-    transform: translateY(0px);
+.polaroid-container.special-photo{  
+  transform:rotate(-1deg);
+  -ms-transform:rotate(-1deg); /* IE9 */
+  -webkit-transform:rotate(-1deg); /* Safari y Chrome */
+  -moz-transform:rotate(-1deg); 
+  margin: 0 auto;
+  width: 500px;
+  left: -10px;
+}
+
+@media (max-width: 530px) {
+.polaroid-container{
+  margin: auto;
+}
+}
+
+@media (max-width: 320px) {
+ .polaroid-container:nth-child(even){
+    left: -35%;
   }
-  50%
-  {
-    transform: translateY(10px);
+
+  .polaroid-container:nth-child(odd){
+    left: -35%;
   }
 }
