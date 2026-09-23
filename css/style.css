@@ -9,6 +9,7 @@
 body {
   position: relative;
   background: transparent;
+  padding-bottom: 40px;
 }
 
 body::before {
