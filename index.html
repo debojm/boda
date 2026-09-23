@@ -69,6 +69,22 @@
         wave4.style.backgroundPositionX = 100 + value * -2 + 'px';
       })
     </script> -->
+    <script>
+      window.addEventListener('scroll', () => {
+        const blurMaximo = 3;
+
+        // 3px -> 0px durante los primeros 300px de scroll
+        const blur = Math.max(
+          blurMaximo - window.scrollY / 100,
+          0
+        );
+
+        document.body.style.setProperty(
+          '--blur-fondo',
+          `${blur}px`
+        );
+      });
+    </script>
   </body>
 
 </html>
