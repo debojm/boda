@@ -53,6 +53,14 @@
 
         Nunc a magna felis. Nunc facilisis semper nulla. Maecenas erat ligula, ornare vitae tortor quis, auctor mollis augue. Nulla pellentesque sapien nec molestie faucibus. Pellentesque laoreet semper posuere. Quisque ipsum libero, feugiat a condimentum at, aliquam ut nibh. Sed eu eleifend justo, eu cursus dolor. Duis semper fringilla purus sed lacinia. In ac nunc dapibus lectus lobortis commodo quis sit amet lectus. Aliquam accumsan dui non odio interdum gravida. Sed sit amet est vehicula urna ullamcorper facilisis non ac urna. Etiam sollicitudin mauris venenatis orci interdum fermentum. Suspendisse molestie dui dignissim justo vestibulum hendrerit. Integer vestibulum ligula ac lorem interdum pharetra. Proin id neque consequat, malesuada enim eu, accumsan dui.
       </p>
+      <div class="polaroid-container rotate-left">
+          <img src="./images/client.jpg" alt="Imagen Polaroid con CSS">
+          <span class="polaroid-text">¡Este es el texto que aparecerá debajo de la imagen!</span>
+      </div>
+      <div class="polaroid-container rotate-right">
+          <img src="./images/client.jpg" alt="Imagen Polaroid con CSS">
+          <span class="polaroid-text">¡Este es el texto que aparecerá debajo de la imagen!</span>
+      </div>
     </div>
     <!-- <script>
       let wave1 = document.getElementById('wave1');
@@ -72,9 +80,13 @@
     <script>
       window.addEventListener('scroll', () => {
         const blurMaximo = 3;
+
         // 3px -> 0px durante los primeros 300px de scroll
-        const blur = Math.max(blurMaximo - window.scrollY / 100, 0);
-        
+        const blur = Math.max(
+          blurMaximo - window.scrollY / 100,
+          0
+        );
+
         document.body.style.setProperty('--blur-fondo',`${blur}px`);
       });
     </script>
