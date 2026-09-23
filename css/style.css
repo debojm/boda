@@ -220,6 +220,8 @@ section
 
 .calendar{
   width: 100%;
+  display: block;
+    height: auto;
 }
 
 
@@ -242,12 +244,12 @@ section
 
 .corazon {
   position: absolute;
-  width: 110px;
-  transform: rotate(5deg);
+  transform: translate(-0%, 0%) rotate(8deg);
   overflow: visible;
   pointer-events: none;
-  top: 177px;
-  left: 181px;
+  right: 2%;
+  bottom: 1%;
+  width: 42%;
 }
 
 .corazon path {
