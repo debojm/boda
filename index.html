@@ -31,7 +31,7 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> -->
 
     <!-- font awesome style -->
-    <!-- <link href="css/font-awesome.min.css" rel="stylesheet" /> -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet" />
@@ -41,58 +41,105 @@
   </head>
 
   <body>
+
     <section>
      <img src="images/dj.png" class="hero-icon">
       <!-- <div class="wave" id="wave1" style="--i:1;"></div>
       <div class="wave" id="wave2" style="--i:2;"></div>
       <div class="wave" id="wave3" style="--i:3;"></div>
       <div class="wave" id="wave4" style="--i:4;"></div> -->
+      <div class="scroll-message" id="scrollMessage">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+        <p>Desliza y descubre</p>
+      </div>
     </section>
-    <div class="sec">
-      <h2>Hola holita</h2>
-      <p style="margin-bottom: 200px;">
-        Esto es un mensaje para ver si se entiende
-      </p>
 
-      <div class="photo-gallery">
-        <div class="polaroid-container rotate-left">
-          <img src="./images/tape2.png" class="tape" style="transform: translate(-130px, 20px) rotate(-30deg);">
-          <img src="./images/a1.jpg" alt="Imagen Polaroid con CSS">
+    <div class="middle-section">
+      <div class="paper-zone">
+        <h2>Hola holita</h2>
+        <p style="margin-bottom: 200px;">
+          Esto es un mensaje para ver si se entiende
+        </p>
+      </div>
+
+      <div class="divisor bottom">
+        <img src="images/divisor-inferior.png">
+      </div>
+
+      <div class="green-zone">
+        <div class="flex-container">
+          <div class="polaroid-container rotate-left">
+            <img src="./images/tape2.png" class="tape right">
+            <img src="./images/a1.jpg" alt="Imagen Polaroid con CSS">
+          </div>
+          <div class="polaroid-container rotate-right">
+            <img src="./images/tape1.png" class="tape">
+            <img src="./images/a3.jpg" alt="Imagen Polaroid con CSS">
+          </div>
+          <div class="polaroid-container rotate-left">
+            <img src="./images/tape3.png" class="tape left">
+            <img src="./images/a2.jpg" alt="Imagen Polaroid con CSS">
+          </div>
+
         </div>
-        <div class="polaroid-container rotate-right">
-          <img src="./images/tape1.png" class="tape">
-          <img src="./images/a3.jpg" alt="Imagen Polaroid con CSS">
-        </div>
-        <div class="polaroid-container rotate-left">
-          <img src="./images/tape3.png" class="tape" style="transform: translate(145px, 30px) rotate(40deg);">
-          <img src="./images/a2.jpg" alt="Imagen Polaroid con CSS">
-        </div>
-        <div class="polaroid-container special-photo">
-          <img src="./images/tape4.png" class="tape">
-          <img src="./images/a4.jpg" alt="Imagen Polaroid con CSS">
-          <span class="polaroid-text">¡Este es el texto que aparecerá debajo de la imagen!</span>
+        <div class="flex-container">
+          <div class="polaroid-container special-photo">
+            <img src="./images/tape4.png" class="tape">
+            <img src="./images/a4.jpg" alt="Imagen Polaroid con CSS">
+            <span class="polaroid-text">¡Este es el texto que aparecerá debajo de la imagen!</span>
+          </div>
         </div>
       </div>
 
-      <div class="calendar-container">
-        <img src="./images/abril2027.png" class="calendar">
-        <svg class="corazon" viewBox="0 0 240 180">
-           <path d="
-              M 112,157
-
-              C 96,143 42,115 25,76
-              C 11,43 27,17 58,20
-              C 86,23 101,45 108,65
-
-              C 116,43 137,18 164,17
-              C 196,16 215,43 204,70
-
-              C 191,106 145,132 112,157
-
-              C 105,163 101,160 108,154
-          "/>
-        </svg>
+      <div class="divisor top">
+        <img src="images/divisor-superior.png">
       </div>
+
+      <div class="paper-zone">
+        <div class="calendar-container">
+          <img src="./images/abril2027.png" class="calendar">
+          <svg class="corazon" viewBox="0 0 240 180">
+            <path d="
+                M 112,157
+                C 96,143 42,115 25,76
+                C 11,43 27,17 58,20
+                C 86,23 101,45 108,65
+                C 116,43 137,18 164,17
+                C 196,16 215,43 204,70
+                C 191,106 145,132 112,157
+                C 105,163 101,160 108,154
+            "/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="divisor bottom reverse">
+        <img src="images/divisor-inferior.png">
+      </div>
+
+      <div class="green-zone">
+        <h2>Y ahora el bebercio</h2>
+        <div class="flex-container">
+          <div class="video-frame">
+            <img src="images/marco.png" alt="">
+            <video preload="auto" autoplay playsinline loop muted id="restaurantVideo">
+              <source src="https://lasllavesdelcarmen.es/video/LasllavesdelCarmen.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="direction">
+            <h2>Las Llaves del Carmen</h2>
+            Carr. de Brunete a El Escorial<br/> 
+            kilometro 19,600<br/> 
+            28210 Madrid<br/> 
+
+            <a href="https://maps.app.goo.gl/YLByxJyh9bDby7kDA" target="_blank">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+
     </div>
     <!-- <script>
       let wave1 = document.getElementById('wave1');
@@ -110,17 +157,55 @@
       })
     </script> -->
     <script>
-      window.addEventListener('scroll', () => {
-        const blurMaximo = 3;
+        let ticking = false;
+        function updateBackground() {
+            const scroll = window.scrollY;
 
-        // 3px -> 0px durante los primeros 300px de scroll
-        const blur = Math.max(
-          blurMaximo - window.scrollY / 100,
-          0
+            // --------------------------------
+            // BLUR
+            // --------------------------------
+
+            const blur = Math.max(
+                3 - scroll / 500,
+                0
+            );
+
+            // --------------------------------
+            // PARALLAX
+            // --------------------------------
+            //
+            // Por cada 100px que bajas,
+            // el fondo sube 4px.
+            //
+            // No existe límite: continúa
+            // durante toda la página.
+            //
+
+            const parallax = -(scroll * 0.04);
+
+            document.body.style.setProperty('--blur-fondo', `${blur}px`);
+            document.body.style.setProperty('--parallax-fondo', `${parallax}px`);
+
+            ticking = false;
+        }
+
+        let scrollDiv = document.getElementById("scrollMessage");
+        window.addEventListener('scroll',() => {
+          if (!ticking) {
+            requestAnimationFrame(updateBackground);
+            let value = window.scrollY;
+
+            scrollDiv.style.bottom = value / 8 + 'px';
+
+            ticking = true;
+          }
+
+          },
+          { passive: true }
         );
 
-        document.body.style.setProperty('--blur-fondo',`${blur}px`);
-      });
+
+        updateBackground();
     </script>
   </body>
 

@@ -1,3 +1,6 @@
+
+/* GENERAL */
+/* ______________________________________________________________ */
 *
 {
   margin: 0;
@@ -20,24 +23,36 @@ body {
 
   position: relative;
   background: transparent;
+  padding-bottom: 50px;
 }
 
 body::before {
   content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+
+  position: fixed;
+  inset: 0;
 
   z-index: -1;
 
-  background-image: url(../images/bg-main.png);
+  background-image: url("../images/bg-main.png");
   background-repeat: repeat-y;
   background-size: 100% auto;
+  background-position: center var(--parallax-fondo, 0px);
 
-  filter: blur(var(--blur-fondo));
+  filter: blur(var(--blur-fondo, 3px));
+
+  pointer-events: none;
 }
+
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* CABECERA DE INICIO */
+/* ______________________________________________________________ */
 
 section
 {
@@ -46,25 +61,123 @@ section
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
-.sec{
+section .scroll-message {
+  flex: 1;
   text-align: center;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+section .scroll-message i.fa,
+section .scroll-message p {
+  font-size: 45px;
+}
+
+section .scroll-message i.fa {
+  animation: mover-vertical 2s ease-in-out infinite;
+}
+
+.hero-icon{
+  width: 80%;
+  max-width: 800px;
+  flex: 6;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+@keyframes mover-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* Se mueve hacia arriba */
+  }
+  100% {
+    transform: translateY(0); /* Regresa a su posición inicial */
+  }
+}
+
+.elemento-animado {
+}
+
+/* SECCIONES PRINCIPALES */
+/* ______________________________________________________________ */
+
+
+.middle-section{
+  text-align: center;
   margin: 0 auto;
   background-color: white;
   position: relative;
   width: 85%;
-  max-width: 450px;
+  /* max-width: 450px; */
   z-index: 1001;
-  background-image: url(../images/paper-bg.jpg);
-  background-size: auto;
   border: 10px #c4c7a8 solid;
+  container-type: inline-size;
 }
 
-.sec > h2 {
-  font: 3m;
+.paper-zone{
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  background-color: #ffffff;
 }
+
+.green-zone{
+  position: relative;
+  padding: 120px 20px 120px 20px;
+  width: 100%;
+  background-size: auto;
+  background: repeating-linear-gradient(
+    90deg,
+    #ecf0e9,
+    #ecf0e9 10px,
+    #c4c7a8 10px,
+    #c4c7a8 20px
+  );
+  /* background-color: rgb(105, 119, 105); */
+}
+
+.divisor{
+  height: 50px;
+  position: relative;
+  width: 100%;
+  height: 0;
+  z-index: 10;
+}
+
+.divisor.reverse{
+  transform: scaleX(-1);
+}
+
+.divisor img {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  display: block;
+  margin-top: -1px;
+}
+
+.divisor.top img{
+  bottom: 0px;
+}
+
+.divisor.bottom img{
+  top: 0px;
+}
+
+
+/* OLA PARALLAX */
+/* ______________________________________________________________ */
 
 .wave{
   position: absolute;
@@ -105,28 +218,8 @@ section
   background: url(../images/wave-white.png);
 }
 
-.hero-icon{
-  width: 80%;
-  max-width: 450px;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  margin: auto;
-} 
-
-/* .hero-icon{
-  width: 80%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  margin: auto;
-} */
-
-
-.photo-gallery{
-  display: flex;
-  flex-direction: column;
-}
+/* IMAGENES */
+/* ______________________________________________________________ */
 
 .polaroid {
   background-color:white;
@@ -140,41 +233,91 @@ section
 }
 
 .polaroid-container {
-  width: 350px;
+  width: 100%;
+  min-width: 250px;
   max-width: 350px;
   padding: 10px;
   border: 1px solid #BFBFBF;
   background-color: white;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
-  margin-bottom: -45px;
   display: flex;
   align-items: center;
   flex-direction: column;
   flex: 1;
-  max-height: fit-content;
-  margin: auto;
   position: relative;
+  margin: 0 auto;
 }
 
-.polaroid-container:nth-child(even){
-  left: -80px;
-}
-
-.polaroid-container:nth-child(odd){
-  left: 30px;
-}
-
-.tape{
-  position: absolute;
-  top: -50px;
-  opacity: 0.75;
-  width: 220px;
-  margin: auto;
-  display: block;
+.polaroid-container.special-photo{
+  transform:rotate(-1deg);
+  -ms-transform:rotate(-1deg); /* IE9 */
+  -webkit-transform:rotate(-1deg); /* Safari y Chrome */
+  -moz-transform:rotate(-1deg);
+  max-width: 500px;
+  min-width: 400px;
 }
 
 .polaroid-container > img:not(.tape) {
   width: 100%;
+}
+
+@container (max-width: 249px) {
+  .polaroid-container {
+    width: 250px;
+    max-width: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .polaroid-container.rotate-left {
+    left: 50%;
+    transform: translateX(-50%) rotate(10deg);
+    -ms-transform: translateX(-50%) rotate(10deg); /* IE9 */
+    -webkit-transform:  translateX(-50%) rotate(10deg); /* Safari y Chrome */
+    -moz-transform: translateX(-50%) rotate(10deg);
+  }
+
+  .polaroid-container.rotate-right {
+    left: 50%;
+    transform: translateX(-50%) rotate(-10deg);
+    -ms-transform:translateX(-50%) rotate(-10deg); /* IE9 */
+    -webkit-transform:translateX(-50%) rotate(-10deg); /* Safari y Chrome */
+    -moz-transform: translateX(-50%) rotate(-10deg);
+  }
+}
+
+
+@container (max-width: 399px) {
+  .polaroid-container.special-photo{
+    width: 300px;
+    min-width: 300px;
+    max-width: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) rotate(-1deg);
+    -ms-transform: translateX(-50%) rotate(-1deg);
+    -webkit-transform: translateX(-50%) rotate(-1deg);
+    -moz-transform: translateX(-50%) rotate(-1deg);
+  }
+}
+
+.tape{
+  position: absolute;
+  opacity: 0.75;
+  width: 60%;
+  margin: auto;
+  display: block;
+  transform: translate(0%, 0%);
+  bottom: 89%;
+}
+
+.tape.left{
+   transform: translate(65%, 45%) rotate(30deg)
+}
+
+.tape.right {
+   transform: translate(-65%, 45%) rotate(-45deg)
 }
 
 .polaroid-text {
@@ -191,29 +334,24 @@ section
   transform:rotate(10deg);
   -ms-transform:rotate(10deg); /* IE9 */
   -webkit-transform:rotate(10deg); /* Safari y Chrome */
-  -moz-transform:rotate(10deg); 
+  -moz-transform:rotate(10deg);
 }
- 
+
 .rotate-right {
   left: 0px;
   transform:rotate(-10deg);
   -ms-transform:rotate(-10deg); /* IE9 */
   -webkit-transform:rotate(-10deg); /* Safari y Chrome */
-  -moz-transform:rotate(-10deg); 
+  -moz-transform:rotate(-10deg);
 }
 
-.polaroid-container.special-photo{  
-  transform:rotate(-1deg);
-  -ms-transform:rotate(-1deg); /* IE9 */
-  -webkit-transform:rotate(-1deg); /* Safari y Chrome */
-  -moz-transform:rotate(-1deg); 
-  margin: 0 auto;
-  width: 500px;
-  left: -10px;
-}
+
+/* CALENDARIO */
+/* ______________________________________________________________ */
 
 .calendar-container{
-  margin-top: 200px;
+  margin: auto;
+  max-width: 600px;
   width: 100%;
   position: relative;
 }
@@ -221,26 +359,8 @@ section
 .calendar{
   width: 100%;
   display: block;
-    height: auto;
+  height: auto;
 }
-
-
-@media (max-width: 530px) {
-.polaroid-container{
-  margin: auto;
-}
-}
-
-@media (max-width: 320px) {
- .polaroid-container:nth-child(even){
-    left: -35%;
-  }
-
-  .polaroid-container:nth-child(odd){
-    left: -35%;
-  }
-}
-
 
 .corazon {
   position: absolute;
@@ -282,4 +402,47 @@ section
   100% {
       stroke-dashoffset: 600;
   }
+}
+
+
+/* VIDEO */
+/* ______________________________________________________________ */
+
+video{
+  width: 100%;
+  position: absolute;
+  bottom: 15.5%;
+  left: 4%;
+  width: 92%;
+  height: 70.5%;
+  object-fit: fill;
+  z-index: 1;
+}
+
+.video-frame {
+  flex: 2;
+  width: 100%;
+  min-width: 250px;
+  height: fit-content;
+  position: relative;
+}
+
+.video-frame img{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.direction{
+  padding: 10px;
+  flex: 1;
+  background-color: white;
+}
+
+.direction > a > i{
+  font-size: 150px;
+}
+
+.direction > a{
+  cursor: pointer;
 }
