@@ -48,6 +48,7 @@
       <div class="wave" id="wave2" style="--i:2;"></div>
       <div class="wave" id="wave3" style="--i:3;"></div>
       <div class="wave" id="wave4" style="--i:4;"></div> -->
+      
       <div class="scroll-message" id="scrollMessage">
         <i class="fa fa-angle-up" aria-hidden="true"></i>
         <p>Desliza y descubre</p>
@@ -173,10 +174,7 @@
             // BLUR
             // --------------------------------
 
-            const blur = Math.max(
-                3 - scroll / 500,
-                0
-            );
+            const blur = Math.max(3 - scroll / 500, 0);
 
             // --------------------------------
             // PARALLAX
@@ -203,7 +201,7 @@
             requestAnimationFrame(updateBackground);
             let value = window.scrollY;
 
-            scrollDiv.style.bottom = value / 8 + 'px';
+            scrollDiv.style.bottom = 100 + value / 8 + 'px';
 
             ticking = true;
           }
