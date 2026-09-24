@@ -461,7 +461,6 @@ video{
 
 .direction{
   height: fit-content;
-  margin: 20px;
   background-color: #7b8f71;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
