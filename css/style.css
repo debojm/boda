@@ -11,6 +11,18 @@
   color: #444;
 }
 
+h1{
+  font-size: 60px;
+}
+
+h2{
+  font-size: 45px;
+}
+
+h3{
+  font-size: 35px;
+}
+
 html,
 body {
   width: 100%;
@@ -49,7 +61,23 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
+.flex-column{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.flex-column > * {
+  flex: 1;
+}
+
 
 /* CABECERA DE INICIO */
 /* ______________________________________________________________ */
@@ -73,6 +101,7 @@ section .scroll-message {
   display: flex;
   flex-direction: column;
   position: relative;
+  bottom: 100px;
 }
 
 
@@ -104,9 +133,6 @@ section .scroll-message i.fa {
   100% {
     transform: translateY(0); /* Regresa a su posición inicial */
   }
-}
-
-.elemento-animado {
 }
 
 /* SECCIONES PRINCIPALES */
@@ -434,15 +460,63 @@ video{
 }
 
 .direction{
-  padding: 10px;
-  flex: 1;
-  background-color: white;
+  height: fit-content;
+  margin: 20px;
+  background-color: #7b8f71;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.direction > a > i{
+.direction > div {
+  padding: 30px 25px;
+  background-color: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translate(-10px,-7px) rotate(3deg)
+}
+
+.direction > div > p {
+  font-size: 33px;
+}
+
+.direction > div > a > i{
   font-size: 150px;
 }
 
-.direction > a{
+.direction > div > a{
   cursor: pointer;
+}
+
+.map-icon{
+  height: 150px;
+  animation: gentle-bounce 1.5s ease-in-out infinite;
+}
+
+.mark-shadow{
+  width: 57px;
+  height: 12px;
+  background: #bbc49c;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  bottom: 15px;
+  animation: increase 1.5s ease-in-out infinite;
+}
+
+@keyframes gentle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes increase {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
 }
