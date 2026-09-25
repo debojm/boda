@@ -46,7 +46,8 @@ body::before {
 
   z-index: -1;
 
-  background-image: url("../images/bg-main.png");
+  /* background-image: url("../images/bg-main.png"); */
+  background-color: #e4e9d6;
   background-repeat: repeat-y;
   background-size: 100% auto;
   background-position: center var(--parallax-fondo, 0px);
@@ -163,13 +164,16 @@ section .scroll-message i.fa {
   padding: 120px 20px 120px 20px;
   width: 100%;
   background-size: auto;
-  background: repeating-linear-gradient(
+  /* background: repeating-linear-gradient(
     90deg,
     #ecf0e9,
     #ecf0e9 10px,
     #c4c7a8 10px,
     #c4c7a8 20px
-  );
+  ); */
+  background-image: url(../images/fondo-verde.png);
+  background-repeat: repeat;
+  background-size: 85% auto;
   /* background-color: rgb(105, 119, 105); */
 }
 
