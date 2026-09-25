@@ -335,7 +335,7 @@ section .scroll-message i.fa {
   margin: auto;
   display: block;
   transform: translate(0%, 0%);
-  bottom: 89%;
+  bottom: 92%;
 }
 
 .tape.left{
@@ -435,20 +435,20 @@ section .scroll-message i.fa {
 /* ______________________________________________________________ */
 
 video{
-  width: 100%;
   position: absolute;
-  bottom: 15.5%;
-  left: 4%;
-  width: 92%;
-  height: 70.5%;
+  bottom: 8.5%;
+  left: 12%;
+  width: 79%;
+  height: 77%;
   object-fit: fill;
   z-index: 1;
+  border: 15px solid #aeb079;
 }
 
 .video-frame {
-  flex: 2;
   width: 100%;
-  min-width: 250px;
+  min-width: 400px;
+  max-width: 770px;
   height: fit-content;
   position: relative;
 }
@@ -463,6 +463,8 @@ video{
   height: fit-content;
   background-color: #7b8f71;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;   
+  min-width: 280px;
 }
 
 .direction > div {
@@ -482,21 +484,23 @@ video{
 
 .direction > div > a{
   cursor: pointer;
+  display: block;
 }
 
 .map-icon{
-  height: 150px;
+  height: 100px;
   animation: gentle-bounce 1.5s ease-in-out infinite;
 }
 
 .mark-shadow{
-  width: 57px;
-  height: 12px;
+  width: 45px;
+  height: 10px;
   background: #bbc49c;
   margin: 0 auto;
   border-radius: 50%;
   position: relative;
-  bottom: 15px;
+  bottom: 13px;
+  left: 1px;
   animation: increase 1.5s ease-in-out infinite;
 }
 
