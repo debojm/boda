@@ -64,6 +64,7 @@ body::before {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
 }
 
 .flex-column{
@@ -72,7 +73,7 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 .flex-column > * {
@@ -490,7 +491,7 @@ video{
 
 .direction{
   height: fit-content;
-  background-color: #7b8f71;
+  background-color: #9b9c88;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;   
   min-width: 280px;
@@ -551,4 +552,34 @@ video{
   50% {
     transform: scale(0.8);
   }
+}
+
+/* CUENTA ATRAS */
+/* ______________________________________________________________ */
+
+
+.time-block{
+  flex:1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.time-block span{
+  flex: 1;
+  min-width: 100%;
+}
+
+.time-block span.unidades-tiempo{
+  font-size: 50px;
+}
+
+.time-block span.label-tiempo{
+  font-size: 30px;
+  color: #9b9c88;
+}
+
+.countdown-container{
+  padding: 60px;
 }
