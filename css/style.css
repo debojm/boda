@@ -210,10 +210,16 @@ section .scroll-message i.fa {
 
 .flower {
   position: absolute;
-  z-index: 1000;
+  z-index: 12;
   transform: translate(0%, 0%);
-  width: 18%;
+  width: 30%;
 }
+
+div.flower > .flower {
+  width: 100%;
+}
+
+
 
 /* OLA PARALLAX */
 /* ______________________________________________________________ */
@@ -460,14 +466,11 @@ section .scroll-message i.fa {
 /* ______________________________________________________________ */
 
 video{
-  position: absolute;
-  bottom: 8.5%;
-  left: 12%;
-  width: 79%;
-  height: 77%;
+  width: 90%;
+  height: auto;
   object-fit: fill;
   z-index: 1;
-  border: 15px solid #aeb079;
+  border: 15px solid #9b9c88;
 }
 
 .video-frame {
@@ -479,9 +482,10 @@ video{
 }
 
 .video-frame img{
-  position: relative;
+  position: absolute;
   z-index: 2;
-  width: 100%;
+  width: 40%;
+  transform: translate(0%, 0%);
 }
 
 .direction{
