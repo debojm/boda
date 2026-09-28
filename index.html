@@ -146,10 +146,11 @@
           <div class="video-frame ani_fadeInLeft aniUtil_dramatic">
             <img class="flower" style="top: -67%;rotate: -36deg; left: -19%; width: 55%;" src="images/flores/flor3.png">
             <img class="flower" style="rotate: 62deg; bottom: -46%; right: -10%;" src="images/flores/flor4.png">
-          
-            <video preload="auto" autoplay playsinline loop muted id="restaurantVideo">
-              <source src="https://lasllavesdelcarmen.es/video/LasllavesdelCarmen.mp4" type="video/mp4">
-            </video>
+            <a class="video-link" href="https://lasllavesdelcarmen.es"  target="_blank">
+              <video preload="auto" autoplay playsinline loop muted id="restaurantVideo">
+                <source src="https://lasllavesdelcarmen.es/video/LasllavesdelCarmen.mp4" type="video/mp4">
+              </video>
+            </a>
           </div>
           <div class="direction ani_fadeInRight aniUtil_dramatic">
             <div class="flex-column">
@@ -262,22 +263,22 @@
         }
 
         let scrollDiv = document.getElementById("scrollMessage");
-        window.addEventListener('scroll',() => {
-          if (!ticking) {
-            requestAnimationFrame(updateBackground);
-            let value = window.scrollY;
+        // window.addEventListener('scroll',() => {
+        //   if (!ticking) {
+        //     requestAnimationFrame(updateBackground);
+        //     let value = window.scrollY;
 
-            scrollDiv.style.bottom = 100 + value / 8 + 'px';
+        //     scrollDiv.style.bottom = 100 + value / 8 + 'px';
 
-            ticking = true;
-          }
+        //     ticking = true;
+        //   }
 
-          },
-          { passive: true }
-        );
+        //   },
+        //   { passive: true }
+        // );
 
 
-        updateBackground();
+        // updateBackground();
 
         const wedding = new Date('2027-04-24 11:00:00');
 

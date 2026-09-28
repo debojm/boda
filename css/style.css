@@ -27,18 +27,16 @@ html,
 body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 body {
-  --blur-fondo: 3px;
-
   position: relative;
   background: transparent;
-  padding-bottom: 50px;
+  padding-bottom: 50px;  
+  background-color: #edf0e6;
 }
 
-body::before {
+/* body::before {
   content: "";
 
   position: fixed;
@@ -46,7 +44,7 @@ body::before {
 
   z-index: -1;
 
-  /* background-image: url("../images/bg-main.png"); */
+  background-image: url("../images/bg-main.png");
   background-color: #edf0e6;
   background-repeat: repeat-y;
   background-size: 100% auto;
@@ -55,7 +53,7 @@ body::before {
   filter: blur(var(--blur-fondo, 3px));
 
   pointer-events: none;
-}
+} */
 
 .flex-container{
   display: flex;
@@ -213,6 +211,7 @@ section .scroll-message i.fa {
   z-index: 12;
   transform: translate(0%, 0%);
   width: 30%;
+  pointer-events: none;
 }
 
 div.flower > .flower {
@@ -471,6 +470,11 @@ video{
   object-fit: fill;
   z-index: 1;
   border: 15px solid #9b9c88;
+}
+
+.video-link{
+  height: fit-content;
+  display: block;
 }
 
 .video-frame {
