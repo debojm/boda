@@ -47,7 +47,7 @@ body::before {
   z-index: -1;
 
   /* background-image: url("../images/bg-main.png"); */
-  background-color: #e4e9d6;
+  background-color: #edf0e6;
   background-repeat: repeat-y;
   background-size: 100% auto;
   background-position: center var(--parallax-fondo, 0px);
@@ -147,8 +147,8 @@ section .scroll-message i.fa {
   position: relative;
   width: 85%;
   /* max-width: 450px; */
-  z-index: 1001;
-  border: 10px #c4c7a8 solid;
+  z-index: 1001;    
+  border: 5px #9b9c88 solid;
   container-type: inline-size;
 }
 
@@ -205,6 +205,15 @@ section .scroll-message i.fa {
   top: 0px;
 }
 
+/* FLORES */
+/* ______________________________________________________________ */
+
+.flower {
+  position: absolute;
+  z-index: 1000;
+  transform: translate(0%, 0%);
+  width: 18%;
+}
 
 /* OLA PARALLAX */
 /* ______________________________________________________________ */
@@ -339,7 +348,7 @@ section .scroll-message i.fa {
   margin: auto;
   display: block;
   transform: translate(0%, 0%);
-  bottom: 92%;
+  bottom: 95%;
 }
 
 .tape.left{
@@ -348,6 +357,18 @@ section .scroll-message i.fa {
 
 .tape.right {
    transform: translate(-65%, 45%) rotate(-45deg)
+}
+
+.tape.inverse.left{
+   transform: translate(65%, 45%) rotate(30deg) scale(-1) 
+}
+
+.tape.inverse.right {
+   transform: translate(-65%, 45%) rotate(-45deg) scale(-1) 
+}
+
+.tape.inverse {
+   transform: scale(-1)
 }
 
 .polaroid-text {
