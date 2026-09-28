@@ -37,7 +37,13 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <!-- <link href="css/responsive.css" rel="stylesheet" /> -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script
+      src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script
+      src = "https://cdn.jsdelivr.net/gh/KodingKhurram/animate.css-dynamic@main/animate.min.js">
+    </script>
   </head>
 
   <body>
@@ -57,8 +63,7 @@
 
     <div class="middle-section">
       <div class="paper-zone">
-        <img style="left: -10.5%; rotate: 182deg; top:0%" class="flower" src="images/flores/flor-completa-1.png">
-        <img style="right: -14.5%; top:65%" class="flower" src="images/flores/flor-completa-2.png">
+        <img style="left: -10.5%; rotate: 182deg; bottom:-30%;" class="flower" src="images/flores/flor-completa-1.png">
       
         <h2>Hola holita</h2>
         <p style="margin-bottom: 200px;">
@@ -71,26 +76,35 @@
       </div>
 
       <div class="green-zone">
+        <img style="right: -14.5%; top:65%" class="flower" src="images/flores/flor-completa-2.png">
+
         <div class="flex-container">
-          <div class="polaroid-container rotate-left">
-            <img src="./images/tape.png" class="tape inverse right">
-            <img src="./images/a1.jpg" alt="Imagen Polaroid con CSS">
+          <div class="ani_fadeInLeft aniUtil_dramatic">
+            <div class="polaroid-container rotate-left ">
+              <img src="./images/tape.png" class="tape inverse right">
+              <img src="./images/a6.jpg" alt="Imagen Polaroid con CSS">
+            </div>
           </div>
-          <div class="polaroid-container rotate-right">
+          
+          <!-- <div class="polaroid-container rotate-right">
             <img src="./images/tape.png" class="tape">
             <img src="./images/a3.jpg" alt="Imagen Polaroid con CSS">
+          </div> -->
+          <div class="ani_fadeInRight aniUtil_dramatic">
+            <div class="polaroid-container rotate-right">
+              <img src="./images/tape.png" class="tape left">
+              <img src="./images/a5.jpg" alt="Imagen Polaroid con CSS">
+            </div>
           </div>
-          <div class="polaroid-container rotate-left">
-            <img src="./images/tape.png" class="tape left">
-            <img src="./images/a2.jpg" alt="Imagen Polaroid con CSS">
-          </div>
-
         </div>
+          
         <div class="flex-container">
-          <div class="polaroid-container special-photo">
-            <img src="./images/tape.png" class="tape inverse">
-            <img src="./images/a4.jpg" alt="Imagen Polaroid con CSS">
-            <span class="polaroid-text">¡Este es el texto que aparecerá debajo de la imagen!</span>
+          <div class="ani_fadeInLeft aniUtil_dramatic">
+            <div class="polaroid-container special-photo">
+              <img src="./images/tape.png" class="tape inverse">
+              <img src="./images/a4.jpg" alt="Imagen Polaroid con CSS">
+              <span class="polaroid-text">En todas nuestras vidas</span>
+            </div>
           </div>
         </div>
       </div>
@@ -101,7 +115,7 @@
 
       <div class="paper-zone">
         <img style="left: -17%; rotate: 153deg;" class="flower" src="images/flores/flor-completa-3.png">
-        <div class="calendar-container">
+        <div class="calendar-container ani_fadeIn aniUtil_dramatic">
           <img src="./images/abril2027.png" class="calendar">
           <svg class="corazon" viewBox="0 0 240 180">
             <path d="
@@ -129,7 +143,7 @@
         </div>
         <h2>Y ahora el bebercio</h2>
         <div class="flex-container">
-          <div class="video-frame">
+          <div class="video-frame ani_fadeInLeft aniUtil_dramatic">
             <img class="flower" style="top: -67%;rotate: -36deg; left: -19%; width: 55%;" src="images/flores/flor3.png">
             <img class="flower" style="rotate: 62deg; bottom: -46%; right: -10%;" src="images/flores/flor4.png">
           
@@ -137,7 +151,7 @@
               <source src="https://lasllavesdelcarmen.es/video/LasllavesdelCarmen.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="direction">
+          <div class="direction ani_fadeInRight aniUtil_dramatic">
             <div class="flex-column">
               <h2>Las Llaves del Carmen</h2>
               <p>
@@ -160,6 +174,22 @@
       </div>
 
       <div class="divisor top reverse">
+        <img src="images/divisor-superior.png">
+      </div>
+
+      <div class="paper-zone">  
+        Aqui irá el itinerario
+      </div>
+
+      <div class="divisor bottom">
+        <img src="images/divisor-inferior.png">
+      </div>
+
+      <div class="green-zone">  
+        Aqui irá el enlace para subir fotos y a google forms
+      </div>
+
+      <div class="divisor top">
         <img src="images/divisor-superior.png">
       </div>
 
