@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
   <head>
@@ -46,9 +46,9 @@
     </script>
   </head>
 
-  <body>
+  <body class="cover-locked">
 
-    <section>
+    <section id="cover" role="button" tabindex="0" aria-label="Haz clic para descubrir la invitación">
      <img src="images/D&M.png" class="hero-icon" alt="Débora y José Manuel">
       <!-- <div class="wave" id="wave1" style="--i:1;"></div>
       <div class="wave" id="wave2" style="--i:2;"></div>
@@ -56,11 +56,34 @@
       <div class="wave" id="wave4" style="--i:4;"></div> -->
       
       <div class="scroll-message" id="scrollMessage">
-        <i class="fa fa-angle-up" aria-hidden="true"></i>
-        <p>Desliza para descubrir</p>
+        <svg class="invitation-envelope" viewBox="0 0 72 52" aria-hidden="true">
+          <defs>
+            <clipPath id="envelope-body-clip"><path d="M5 18h62v29H5z"/></clipPath>
+            <clipPath id="envelope-letter-clip"><path d="M5-30h62v77H5z"/></clipPath>
+          </defs>
+          <path class="envelope-back" d="M5 18h62v29H5z"/>
+          <path class="envelope-flap envelope-flap-behind" d="M5 18 36 40 67 18z"/>
+          <g clip-path="url(#envelope-letter-clip)">
+            <g class="envelope-letter">
+              <path d="M13 19h46v38H13z"/>
+              <svg class="envelope-rings" x="23" y="25" width="26" height="26" viewBox="-0.5 -0.5 16 16" aria-hidden="true"><path d="M.9375 9.5875a4.475 4.475 0 1 0 8.95 0 4.475 4.475 0 1 0-8.95 0M6.3125 7.8a3.875 3.875 0 1 0 7.75 0 3.875 3.875 0 1 0-7.75 0m4.16875-3.88125h-.59375L8.1 2.13125 8.69375.9375h2.98125l.6 1.19375-1.79375 1.7875z"/></svg>
+            </g>
+          </g>
+          <path class="envelope-front" d="M5 18v29h62V18L36 40z"/>
+          <g clip-path="url(#envelope-body-clip)">
+            <path class="envelope-fold" d="M5 47 27 34M67 47 45 34"/>
+          </g>
+          <path class="envelope-flap envelope-flap-front" d="M5 18 36 40 67 18z"/>
+        </svg>
+        <p>Clic para descubrir</p>
       </div>
     </section>
 
+    <audio id="backgroundMusic" src="audio-boda.mp3" preload="metadata" loop></audio>
+    <button id="musicToggle" class="music-toggle" type="button" aria-label="Activar música" aria-pressed="false" title="Activar música">
+      <svg class="music-icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 13.4199c1.10457 0 2-.8954 2-2 0-1.1045-.89543-1.99998-2-1.99998s-2 .89548-2 1.99998c0 1.1046.89543 2 2 2Z"/><path d="M11.5 10.9199c1.1046 0 2-.8954 2-1.99998 0-1.10457-.8954-2-2-2s-2 .89543-2 2c0 1.10458.8954 1.99998 2 1.99998Z"/><path d="M13.5 8.91996v-7.84a.5.5 0 0 0-.63-.48l-8 2.22a.5.5 0 0 0-.37.48v8.12"/><path d="m4.5 5.91992 9-2.5"/></svg>
+      <span>Música</span>
+    </button>
     <div class="middle-section">
       <div class="paper-zone welcome-zone">
         <h2>¡Nos casamos!</h2>
@@ -192,12 +215,14 @@
         <div class="memories-layout">
           <div class="memory-card-layer qr-layer ani_fadeInRight aniUtil_dramatic">
             <div class="qr-card">
-            <h2 style="margin-right: 90px;">Compartid vuestros recuerdos</h2>
-            <p style="margin-right: 90px;">Nos encantará revivir el día a través de vuestras fotos.</p>
-            <p style="margin-right: 90px;">Escanead el QR o pulsadlo para compartirlas.</p>
+            <div class="form-copy">
+            <h2>Compartid vuestros recuerdos</h2>
+            <p>Nos encantará revivir el día a través de vuestras fotos.</p>
+            <p>Escanead el QR o pulsadlo para compartirlas.</p>
             <a href="https://photos.app.goo.gl/2uaLoavmVkdsXajY9" target="_blank">
               <img class="photo-qr" src="images/qr-fotos.svg" alt="Código QR para acceder a las fotos de la boda">
             </a>
+            </div>
             </div>
           </div>
           <div class="memory-card-layer form-layer ani_fadeInLeft aniUtil_dramatic">
@@ -346,6 +371,68 @@
           document.getElementById('seconds').textContent = formatTime(seconds);
         }
 
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        const musicToggle = document.getElementById("musicToggle");
+        let musicStarting = false;
+
+        function setMusicButton(isPlaying) {
+          musicToggle.setAttribute("aria-pressed", String(isPlaying));
+          musicToggle.setAttribute("aria-label", isPlaying ? "Pausar música" : "Reanudar música");
+          musicToggle.title = isPlaying ? "Pausar música" : "Reanudar música";
+          musicToggle.querySelector("span").textContent = isPlaying ? "Pausar" : "Música";
+          musicToggle.classList.toggle("is-playing", isPlaying);
+        }
+
+        async function playBackgroundMusic() {
+          if (musicStarting || !backgroundMusic.paused) return;
+          musicStarting = true;
+          backgroundMusic.muted = false;
+          backgroundMusic.volume = 1;
+          try {
+            await backgroundMusic.play();
+            setMusicButton(true);
+          } catch (error) {
+            console.error("No se pudo reproducir la música:", error);
+            setMusicButton(false);
+          } finally {
+            musicStarting = false;
+          }
+        }
+
+        const cover = document.getElementById("cover");
+        let coverOpened = false;
+        function openInvitation() {
+          if (coverOpened) return;
+          coverOpened = true;
+          playBackgroundMusic();
+          window.scrollTo(0, 0);
+          cover.setAttribute("aria-disabled", "true");
+          document.body.classList.add("invitation-opening");
+          window.setTimeout(() => document.body.classList.add("invitation-lifting"), 1450);
+          window.setTimeout(() => {
+            cover.hidden = true;
+            document.body.classList.remove("cover-locked");
+            document.body.classList.add("invitation-open");
+            window.scrollTo(0, 0);
+          }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 2450);
+        }
+        cover.addEventListener("click", openInvitation);
+        cover.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openInvitation();
+          }
+        });
+
+        musicToggle.addEventListener("click", () => {
+          if (backgroundMusic.paused) {
+            playBackgroundMusic();
+          } else {
+            backgroundMusic.pause();
+          }
+        });
+        backgroundMusic.addEventListener("playing", () => setMusicButton(true));
+        backgroundMusic.addEventListener("pause", () => setMusicButton(false));
         const countdownInterval = setInterval(updateCountdown, 1000);
 
         updateCountdown();
