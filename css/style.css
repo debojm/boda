@@ -26,6 +26,17 @@ h3{
   font-weight: normal;  
 }
 
+.welcome-zone > p,
+.polaroids-zone > p,
+.direction > .flex-column > p,
+.section-intro,
+.itinerary-list small,
+.form-copy > p {
+  font-family: "Dancing Script", "Segoe Script", cursive;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 html,
 body {
   width: 100%;
@@ -615,7 +626,7 @@ div.flower > .flower {
 
 video{
   display: block;
-  width: 90%;
+  width: 100%;
   height: auto;
   object-fit: fill;
   z-index: 1;
@@ -623,10 +634,11 @@ video{
 }
 
 .video-link{
-  display: inline-block;
-  margin-top: 0.75rem;
-  color: inherit;
-  text-decoration: underline;
+  display: block;
+}
+
+.video-link video{
+  pointer-events: none;
 }
 
 .video-frame {
@@ -694,6 +706,26 @@ video{
   bottom: 8px;
   left: 1px;
   animation: increase 1.5s ease-in-out infinite;
+}
+
+.relative{
+  position: relative;
+}
+
+.detail-logo{
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  position: absolute;    
+  top: 15px;
+}
+
+.trajes-logo{
+  display: block;
+  width: min(100%, 150px);
+  max-height: 110px;
+  object-fit: contain;
+  margin: 8px auto 0;
 }
 
 @keyframes gentle-bounce {
@@ -844,6 +876,7 @@ video{
 .form-copy h2{ margin-bottom: 14px; }
 .form-copy p{font-size: 27px; line-height: 1.3; }
 .qr-card{
+  min-width: 0;
   flex: none;
   padding: 28px 36px;
   background: #fff;
@@ -858,6 +891,8 @@ video{
   z-index: 2;
 }
 .qr-card > a{ display: block; }
+.qr-card .form-copy{ width: 100%; min-width: 0; }
+.qr-card .form-copy > img{ max-width: 100%; }
 .photo-qr{ display: block; width: min(100%, 280px); height: auto; margin: 18px auto; }
 .qr-card span{ display:block; margin-top: 10px; font-size: 30px; }
 .form-link{

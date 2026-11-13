@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
     <!-- bootstrap core css -->
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> -->
@@ -158,24 +159,29 @@
 
       <div class="green-zone celebration-zone">
 
-        <h2>Brindemos,<img src="./images/cocktail.png"></h2>
-        <h2>Bailemos,</h2>
-        <h2>y disfrutemos juntos!</h2>
+        <h2 class="relative">
+          Brindemos,
+          <img style="top: 18px; margin-left: 8px; transform: rotate(-15deg);" class="detail-logo" src="./images/asterisco1.png">
+        </h2>
+        <h2 class="relative">
+          <img style="margin-left: -44px; top: 16px; transform: rotate(10deg);" class="detail-logo" src="./images/corazon.png">
+          Bailemos,
+        </h2>
+        <h2 class="relative">
+          y disfrutemos juntos!
+          <img style="margin-left: 10px; top: 6px;" class="detail-logo" src="./images/asterisco2.png">
+        </h2>
 
         <div class="flex-container" style="margin-top: 50px;">
           <div class="video-frame ani_fadeInLeft aniUtil_dramatic">
-            <img class="flower" style="top: -15%;
-    rotate: -36deg;
-    left: -2%;
-    width: 18%;" src="images/flores/flor3.png">
-            <img class="flower" style="rotate: -8deg;
-    bottom: -8%;
-    right: 0%;
-    width: 18%;" src="images/flores/flor2.png">
-            <video id="restaurantVideo" autoplay loop muted playsinline preload="metadata" aria-label="Vídeo de Las Llaves del Carmen">
-              <source src="./video/las-llaves-del-carmen.mp4" type="video/mp4">
-            </video>
-            <a class="video-link" href="https://lasllavesdelcarmen.es" target="_blank" rel="noopener noreferrer">Visitar Las Llaves del Carmen</a>
+            <img class="flower" style="top: -15%; rotate: -36deg; left: -7%; width: 18%;" src="images/flores/flor3.png">
+            <img class="flower" style="rotate: -8deg; bottom: -8%; right: -5%; width: 18%;" src="images/flores/flor2.png">
+            <a class="video-link" href="https://lasllavesdelcarmen.es" target="_blank" rel="noopener noreferrer" aria-label="Visitar Las Llaves del Carmen">
+              <video id="restaurantVideo" autoplay loop muted playsinline preload="auto" aria-label="Vídeo de Las Llaves del Carmen">
+                <source src="./video/las-llaves-del-carmen.mp4" type="video/mp4">
+                Tu navegador no puede reproducir este vídeo.
+              </video>
+            </a>
           </div>
           <div class="direction ani_fadeInRight aniUtil_dramatic">
             <div class="flex-column">
@@ -244,6 +250,7 @@
             <a href="https://photos.app.goo.gl/2uaLoavmVkdsXajY9" target="_blank">
               <img class="photo-qr" src="images/qr-fotos.svg" alt="Código QR para acceder a las fotos de la boda">
             </a>
+            <img class="trajes-logo" src="./images/Icono de traje y vestido.png" alt="Traje y vestido">
             </div>
             </div>
           </div>
