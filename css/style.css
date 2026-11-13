@@ -151,7 +151,7 @@ section .scroll-message {
 
 
 section .scroll-message p {
-  font-size: 45px;
+  font-size: 35px;
 }
 
 section .invitation-envelope {
@@ -317,16 +317,6 @@ section .envelope-flap-front { opacity: 1; }
   background-size: 85% auto; */
   background-color: rgb(209, 214, 209); 
 }
-.celebration-zone > h2,
-.decorated-section-title{
-  position: relative;
-  isolation: isolate;
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 auto 80px;
-  padding: 10px 28px;
-  background: transparent;
-}
 
 .divisor{
   height: 50px;
@@ -427,6 +417,7 @@ div.flower > .flower {
 
 .polaroid-container:not(:has(> span.polaroid-text)){
   padding-bottom: 80px;
+  margin-top: 40px;
 }
 
 .polaroid-container {
@@ -539,6 +530,7 @@ div.flower > .flower {
 
 .rotate-left {
   right: 0px;
+  top: 25px;
   transform:rotate(10deg);
   -ms-transform:rotate(10deg); /* IE9 */
   -webkit-transform:rotate(10deg); /* Safari y Chrome */
@@ -547,6 +539,7 @@ div.flower > .flower {
 
 .rotate-right {
   left: 0px;
+  top: 25px;
   transform:rotate(-10deg);
   -ms-transform:rotate(-10deg); /* IE9 */
   -webkit-transform:rotate(-10deg); /* Safari y Chrome */
@@ -621,6 +614,7 @@ div.flower > .flower {
 /* ______________________________________________________________ */
 
 video{
+  display: block;
   width: 90%;
   height: auto;
   object-fit: fill;
@@ -629,8 +623,10 @@ video{
 }
 
 .video-link{
-  height: fit-content;
-  display: block;
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: inherit;
+  text-decoration: underline;
 }
 
 .video-frame {
@@ -807,9 +803,10 @@ video{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 48px;
   max-width: 760px;
   margin: 0 auto;
+  padding-top: 48px;
 }
 .memory-card-layer{
   position: relative;
@@ -817,9 +814,8 @@ video{
   background: #9b9c88;
   box-shadow: 5px 5px 15px rgba(0,0,0,.3);
 }
-.qr-layer{ z-index: 1; }
+.qr-layer{ z-index: 1; background: #9b9c88; }
 .form-layer{ z-index: 2; background: #8e956f; }
-.memories-layout .form-layer{ margin-top: 16px; }
 .memory-card-layer > .qr-card,
 .memory-card-layer > .form-card{
   position: relative;
@@ -841,7 +837,7 @@ video{
   justify-content: space-around;
   gap: 22px;
   text-align: left;
-  transform: rotate(2.2deg);
+  transform: rotate(-1.2deg);
   z-index: 1;
 }
 .form-copy{ max-width: 530px; }
@@ -858,7 +854,7 @@ video{
   justify-content: space-around;
   gap: 22px;
   text-align: left;
-  transform: rotate(-2.2deg);
+  transform: rotate(1.2deg);
   z-index: 2;
 }
 .qr-card > a{ display: block; }
@@ -892,6 +888,10 @@ video{
 .form-link:hover{ transform: none; }
 .form-link p{ text-decoration: underline; text-underline-offset: 4px; }
 
+.subrayado{
+  text-decoration: underline;
+}
+
 @keyframes envelope-sway{
   0%, 100% { transform: rotate(0); }
   25% { transform: rotate(-3deg); }
@@ -910,7 +910,6 @@ video{
     width: min(100%, 340px, 72cqw);
     margin-top: 42px;
   }
-  .celebration-zone > h2, .decorated-section-title{ padding: 8px 18px; font-size: 38px; }
   .section-intro{ font-size: 25px; }
   .itinerary-zone{ padding: 38px 14px 48px; }
   .memories-zone{ padding: 88px 24px 96px; }
@@ -919,12 +918,11 @@ video{
   .itinerary-list time{ flex-basis: 72px; font-size: 22px; }
   .itinerary-list strong{ font-size: 29px; }
   .itinerary-list small{ font-size: 21px; }
-  .memories-layout{ flex-direction: column; gap: 0; width: calc(100% - 12px); }
+  .memories-layout{ flex-direction: column; gap: 48px; width: calc(100% - 12px); }
   .form-card{ width: 100%; min-height: 0; flex-direction: column; padding: 22px 16px; text-align: center; gap: 12px; }
   .form-copy p{ font-size: 23px; }
   .form-link{ flex-basis: auto; }
   .qr-card{ flex-basis: auto; width: 100%; margin-top: 0; padding: 24px 20px; transform: rotate(1deg); text-align: center; }
-  .memories-layout .form-layer{ margin-top: 16px; }
 }
 /* Control de música al estilo de la invitación */
 .music-toggle {
