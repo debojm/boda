@@ -721,11 +721,16 @@ video{
 }
 
 .trajes-logo{
-  display: block;
-  width: min(100%, 150px);
   max-height: 110px;
   object-fit: contain;
   margin: 8px auto 0;
+  display: inline-block;
+  width: 40%;
+}
+
+.outfit-titulo{
+  display: inline-block;
+  width: 60%;
 }
 
 @keyframes gentle-bounce {
