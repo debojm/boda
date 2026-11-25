@@ -723,7 +723,6 @@ video{
 .trajes-logo{
   max-height: 110px;
   object-fit: contain;
-  margin: 8px auto 0;
   display: inline-block;
   width: 40%;
 }
